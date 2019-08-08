@@ -41,7 +41,7 @@ class YoloTrain(object):
         self.trainset            = Dataset('train')
         self.testset             = Dataset('test')
         self.steps_per_period    = len(self.trainset)
-        self.sess                = tf.Session(config=tf.ConfigProto(allow_soft_placement=True))
+        self.sess                = tf.Session(config=tf.ConfigProto(allow_soft_placement=True,gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction = 0.5)))
 
         with tf.name_scope('define_input'):
             self.input_data   = tf.placeholder(dtype=tf.float32, name='input_data')
