@@ -1,0 +1,10 @@
+person 484 54 594 244
+person 425 0 493 151
+person 246 0 335 103
+person 163 0 242 114
+person 573 1 640 303
+person 49 0 86 75
+person 79 0 146 69
+person 557 0 611 65
+person 323 0 434 88
+person 0 0 40 263

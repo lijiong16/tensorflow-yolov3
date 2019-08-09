@@ -5,7 +5,8 @@ import shutil
 import operator
 import sys
 import argparse
-
+import pdb
+p=pdb.set_trace
 MINOVERLAP = 0.5 # default value (defined in the PASCAL VOC2012 challenge)
 
 parser = argparse.ArgumentParser()
@@ -180,6 +181,7 @@ def draw_plot_func(dictionary, n_classes, window_title, plot_title, x_label, out
   # sort the dictionary by decreasing value, into a list of tuples
   sorted_dic_by_value = sorted(dictionary.items(), key=operator.itemgetter(1))
   # unpacking the list of tuples into two lists
+  #p()
   sorted_keys, sorted_values = zip(*sorted_dic_by_value)
   # 
   if true_p_bar != "":

@@ -1,0 +1,10 @@
+person 134 16 570 420
+person 104 2 253 298
+person 221 13 334 242
+person 502 59 584 224
+person 560 75 640 420
+person 304 22 521 420
+person 71 2 151 197
+person 57 0 123 132
+person 0 0 32 87
+person 19 6 61 111

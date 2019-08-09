@@ -1,0 +1,6 @@
+person 284 59 525 360
+person 436 68 586 301
+person 542 45 611 257
+person 6 168 191 371
+person 181 0 271 86
+person 132 86 256 296
