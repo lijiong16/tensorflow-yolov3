@@ -19,12 +19,13 @@ from PIL import Image
 
 return_elements = ["input/input_data:0", "pred_sbbox/concat_2:0", "pred_mbbox/concat_2:0", "pred_lbbox/concat_2:0"]
 pb_file         = "./yolov3_coco.pb"
-image_path      = "./docs/images/road.jpeg"
-num_classes     = 80
+#image_path      = "./docs/images/road.jpeg"
+image_path      = "/home/lijiong/Github/PyTorch-YOLOv3/data/images/train2017/000000245598.jpg"
+num_classes     = 1
 input_size      = 416
 graph           = tf.Graph()
 
-original_image = cv2.imread(image_path)
+original_image = np.array(Image.open(image_path))
 original_image_size = original_image.shape[:2]
 image_data = utils.image_preporcess(np.copy(original_image), [input_size, input_size])
 image_data = image_data[np.newaxis, ...]

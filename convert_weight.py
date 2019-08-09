@@ -15,11 +15,14 @@ import argparse
 import tensorflow as tf
 from core.yolov3 import YOLOV3
 from core.config import cfg
+import pdb
+p=pdb.set_trace
 parser = argparse.ArgumentParser()
 parser.add_argument("--train_from_coco", action='store_true')
 flag = parser.parse_args()
 
-org_weights_path = cfg.YOLO.ORIGINAL_WEIGHT
+#org_weights_path = cfg.YOLO.ORIGINAL_WEIGHT
+org_weights_path ='./checkpoint/yolov3_test_loss=84.3798.ckpt-1'
 cur_weights_path = cfg.YOLO.DEMO_WEIGHT
 preserve_cur_names = ['conv_sbbox', 'conv_mbbox', 'conv_lbbox']
 preserve_org_names = ['Conv_6', 'Conv_14', 'Conv_22']
@@ -61,7 +64,17 @@ for var in tf.global_variables():
 org_weights_num = len(org_weights_mess)
 cur_weights_num = len(cur_weights_mess)
 if cur_weights_num != org_weights_num:
-    raise RuntimeError
+    org_weights_mess=org_weights_mess[0:cur_weights_num] #delete unused weights such as learing rate 
+    org_weights_num=cur_weights_num
+    #p()
+    #print(str(len(org_weights_mess))+'  '+str(len(cur_weights_mess)))
+    #f=open('org.txt','w')
+    #f.write(str(org_weights_mess))
+    #f.close()
+    #f=open('cur.txt','w')
+    #f.write(str(org_weights_mess))
+    #f.close()
+    #raise RuntimeError
 
 print('=> Number of weights that will rename:\t%d' % cur_weights_num)
 cur_to_org_dict = {}

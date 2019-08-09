@@ -21,7 +21,8 @@ from tqdm import tqdm
 from core.dataset import Dataset
 from core.yolov3 import YOLOV3
 from core.config import cfg
-
+import pdb
+p=pdb.set_trace
 
 class YoloTrain(object):
     def __init__(self):
@@ -171,7 +172,8 @@ class YoloTrain(object):
                 })
 
                 test_epoch_loss.append(test_step_loss)
-
+                #p()
+            
             train_epoch_loss, test_epoch_loss = np.mean(train_epoch_loss), np.mean(test_epoch_loss)
             ckpt_file = "./checkpoint/yolov3_test_loss=%.4f.ckpt" % test_epoch_loss
             log_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))

@@ -90,7 +90,7 @@ class YoloTest(object):
                 image_path = annotation[0]
                 image_name = image_path.split('/')[-1]
                 image = cv2.imread(image_path)
-                bbox_data_gt = np.array([list(map(int, box.split(','))) for box in annotation[1:]])
+                bbox_data_gt = np.array([list(map(float, box.split(','))) for box in annotation[1:]]).astype(int)
 
                 if len(bbox_data_gt) == 0:
                     bboxes_gt=[]
