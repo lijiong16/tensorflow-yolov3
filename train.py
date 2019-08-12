@@ -42,7 +42,7 @@ class YoloTrain(object):
         self.trainset            = Dataset('train')
         self.testset             = Dataset('test')
         self.steps_per_period    = len(self.trainset)
-        self.sess                = tf.Session(config=tf.ConfigProto(allow_soft_placement=True,gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction = 0.5)))
+        self.sess                = tf.Session(config=tf.ConfigProto(allow_soft_placement=True,gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction = 0.99)))
 
         with tf.name_scope('define_input'):
             self.input_data   = tf.placeholder(dtype=tf.float32, name='input_data')
@@ -139,7 +139,7 @@ class YoloTrain(object):
             else:
                 train_op = self.train_op_with_all_variables
 
-            pbar = tqdm(self.trainset)
+            pbar = tqdm(self.trainset,ncols=50)
             train_epoch_loss, test_epoch_loss = [], []
 
             for train_data in pbar:
@@ -179,7 +179,7 @@ class YoloTrain(object):
             log_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
             print("=> Epoch: %2d Time: %s Train loss: %.2f Test loss: %.2f Saving %s ..."
                             %(epoch, log_time, train_epoch_loss, test_epoch_loss, ckpt_file))
-            self.saver.save(self.sess, ckpt_file, global_step=step_num)
+            self.saver.save(self.sess, ckpt_file, global_step=epoch)
 
 
 
