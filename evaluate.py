@@ -99,7 +99,7 @@ class YoloTest(object):
                     bboxes_gt, classes_gt = bbox_data_gt[:, :4], bbox_data_gt[:, 4]
                 ground_truth_path = os.path.join(ground_truth_dir_path, str(num) + '.txt')
 
-                print('=> ground truth of %s:' % image_name)
+                #print('=> ground truth of %s:' % image_name)
                 num_bbox_gt = len(bboxes_gt)
                 with open(ground_truth_path, 'w') as f:
                     for i in range(num_bbox_gt):
@@ -107,8 +107,8 @@ class YoloTest(object):
                         xmin, ymin, xmax, ymax = list(map(str, bboxes_gt[i]))
                         bbox_mess = ' '.join([class_name, xmin, ymin, xmax, ymax]) + '\n'
                         f.write(bbox_mess)
-                        print('\t' + str(bbox_mess).strip())
-                print('=> predict result of %s:' % image_name)
+                        #print('\t' + str(bbox_mess).strip())
+                #print('=> predict result of %s:' % image_name)
                 predict_result_path = os.path.join(predicted_dir_path, str(num) + '.txt')
                 bboxes_pr = self.predict(image)
 
@@ -126,7 +126,7 @@ class YoloTest(object):
                         xmin, ymin, xmax, ymax = list(map(str, coor))
                         bbox_mess = ' '.join([class_name, score, xmin, ymin, xmax, ymax]) + '\n'
                         f.write(bbox_mess)
-                        print('\t' + str(bbox_mess).strip())
+                        #print('\t' + str(bbox_mess).strip())
 
     def voc_2012_test(self, voc2012_test_path):
 
@@ -144,7 +144,7 @@ class YoloTest(object):
             image_path = os.path.join(voc2012_test_path, 'JPEGImages', image_ind + '.jpg')
             image = cv2.imread(image_path)
 
-            print('predict result of %s:' % image_ind)
+            #print('predict result of %s:' % image_ind)
             bboxes_pr = self.predict(image)
             for bbox in bboxes_pr:
                 coor = np.array(bbox[:4], dtype=np.int32)
@@ -156,7 +156,7 @@ class YoloTest(object):
                 bbox_mess = ' '.join([image_ind, score, xmin, ymin, xmax, ymax]) + '\n'
                 with open(os.path.join(results_path, 'comp4_det_test_' + class_name + '.txt'), 'a') as f:
                     f.write(bbox_mess)
-                print('\t' + str(bbox_mess).strip())
+                #print('\t' + str(bbox_mess).strip())
 
 
 if __name__ == '__main__': YoloTest().evaluate()
