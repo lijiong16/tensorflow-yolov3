@@ -21,8 +21,8 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--train_from_coco", action='store_true')
 flag = parser.parse_args()
 
-org_weights_path = cfg.YOLO.ORIGINAL_WEIGHT
-#org_weights_path ='./checkpoint/yolov3_test_loss=84.3798.ckpt-1'
+#org_weights_path = cfg.YOLO.ORIGINAL_WEIGHT
+org_weights_path ='/content/drive/My Drive/yolov3_test_loss=13.0953.ckpt-3'
 cur_weights_path = cfg.YOLO.DEMO_WEIGHT
 preserve_cur_names = ['conv_sbbox', 'conv_mbbox', 'conv_lbbox']
 preserve_org_names = ['Conv_6', 'Conv_14', 'Conv_22']
