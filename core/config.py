@@ -40,12 +40,12 @@ __C.TRAIN.ANNOT_PATH            = "./data/dataset/low_train.txt"
 __C.TRAIN.BATCH_SIZE            = 6
 __C.TRAIN.INPUT_SIZE            = [320, 352, 384, 416, 448, 480, 512, 544, 576, 608]
 __C.TRAIN.DATA_AUG              = True
-__C.TRAIN.LEARN_RATE_INIT       = 1e-4
-__C.TRAIN.LEARN_RATE_END        = 1e-6
-__C.TRAIN.WARMUP_EPOCHS         = 2
-__C.TRAIN.FISRT_STAGE_EPOCHS    = 2 #20
+__C.TRAIN.LEARN_RATE_INIT       = 1e-5
+__C.TRAIN.LEARN_RATE_END        = 1e-7
+__C.TRAIN.WARMUP_EPOCHS         = 1#2
+__C.TRAIN.FISRT_STAGE_EPOCHS    = 0 #20
 __C.TRAIN.SECOND_STAGE_EPOCHS   = 30
-__C.TRAIN.INITIAL_WEIGHT        = "./checkpoint/yolov3_test_loss=10.6412.ckpt-1"#"./checkpoint/yolov3_coco_demo.ckpt"
+__C.TRAIN.INITIAL_WEIGHT        = "./checkpoint/yolov3_test_loss=12.9836.ckpt-4"#"./checkpoint/yolov3_coco_demo.ckpt"
 
 
 
@@ -59,7 +59,7 @@ __C.TEST.DATA_AUG               = False
 __C.TEST.WRITE_IMAGE            = True
 __C.TEST.WRITE_IMAGE_PATH       = "./data/detection/"
 __C.TEST.WRITE_IMAGE_SHOW_LABEL = True
-__C.TEST.WEIGHT_FILE            = "./checkpoint/yolov3_test_loss=12.6550.ckpt-20"#"./checkpoint/yolov3_coco_demo.ckpt"#
+__C.TEST.WEIGHT_FILE            = "./checkpoint/yolov3_test_loss=10.2566.ckpt-7"#"./checkpoint/yolov3_coco_demo.ckpt"#
 __C.TEST.SHOW_LABEL             = True
 __C.TEST.SCORE_THRESHOLD        = 0.3
 __C.TEST.IOU_THRESHOLD          = 0.45

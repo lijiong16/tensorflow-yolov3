@@ -18,7 +18,8 @@ import numpy as np
 import tensorflow as tf
 import core.utils as utils
 from core.config import cfg
-
+import pdb
+p=pdb.set_trace
 
 
 class Dataset(object):
@@ -89,6 +90,7 @@ class Dataset(object):
                     batch_mbboxes[num, :, :] = mbboxes
                     batch_lbboxes[num, :, :] = lbboxes
                     num += 1
+                    #p()
                 self.batch_count += 1
                 return batch_image, batch_label_sbbox, batch_label_mbbox, batch_label_lbbox, \
                        batch_sbboxes, batch_mbboxes, batch_lbboxes
@@ -159,12 +161,12 @@ class Dataset(object):
             raise KeyError("%s does not exist ... " %image_path)
         image = np.array(cv2.imread(image_path))
         bboxes = np.array([list(map(float, box.split(','))) for box in line[1:]]).astype(int)
-        
+        #p()
         if self.data_aug:
             image, bboxes = self.random_horizontal_flip(np.copy(image), np.copy(bboxes))
             image, bboxes = self.random_crop(np.copy(image), np.copy(bboxes))
             image, bboxes = self.random_translate(np.copy(image), np.copy(bboxes))
-
+        #p()
         image, bboxes = utils.image_preporcess(np.copy(image), [self.train_input_size, self.train_input_size], np.copy(bboxes))
         return image, bboxes
 
