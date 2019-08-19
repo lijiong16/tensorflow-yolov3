@@ -5,13 +5,13 @@ bin-release/
 [Oo]bj/
 [Bb]in/
 #ckpt and pics
-/checkpoint
-/data/dataset/*.json
-/data/log
-/data/detection
-/show_result
-/mAP/predicted
-/mAP/ground-truth
+checkpoint/
+data/dataset/*.json
+data/log/
+data/detection/
+show_result/
+mAP/predicted/
+mAP/ground-truth/
 # Other files and folders
 .settings/
 
