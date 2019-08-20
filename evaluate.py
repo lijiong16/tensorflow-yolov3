@@ -109,7 +109,8 @@ class YoloTest(object):
                         f.write(bbox_mess)
                         print('\t' + str(bbox_mess).strip())
                 print('=> predict result of %s:' % image_name)
-                predict_result_path = os.path.join(predicted_dir_path, str(num) + '.txt')
+                #predict_result_path = os.path.join(predicted_dir_path, str(num) + '.txt')
+                predict_result_path = os.path.join(predicted_dir_path, image_name[:-4] + '.txt')
                 bboxes_pr = self.predict(image)
 
                 if self.write_image:
