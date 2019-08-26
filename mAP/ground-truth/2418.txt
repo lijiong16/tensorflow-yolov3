@@ -1,1 +1,6 @@
-person 6 143 170 207
+person 0 0 593 480
+person 0 0 593 480
+person 0 0 593 480
+person 0 0 593 480
+person 0 0 593 480
+person 0 0 593 480

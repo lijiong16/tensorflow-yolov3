@@ -1,7 +1,6 @@
-person 154 65 373 438
-person 0 362 14 396
-person 393 354 471 438
-person 83 177 194 433
-person 313 190 446 432
-person 480 332 500 438
-person 27 406 82 438
+person 3 0 375 493
+person 3 0 375 493
+person 3 0 375 493
+person 3 0 375 493
+person 3 0 375 493
+person 3 0 375 493

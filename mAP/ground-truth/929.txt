@@ -1,10 +1,6 @@
-person 169 207 331 336
-person 517 3 567 39
-person 466 0 524 35
-person 567 0 619 55
-person 228 0 314 119
-person 313 0 347 54
-person 410 0 456 41
-person 456 0 489 40
-person 344 0 387 51
-person 375 0 417 16
+person 206 12 419 286
+person 206 12 419 286
+person 206 12 419 286
+person 206 12 419 286
+person 206 12 419 286
+person 206 12 419 286

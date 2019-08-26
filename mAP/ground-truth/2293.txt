@@ -1,1 +1,6 @@
-person 328 35 640 480
+person 0 0 245 66
+person 0 0 245 66
+person 0 0 245 66
+person 0 0 245 66
+person 0 0 245 66
+person 0 0 245 66
