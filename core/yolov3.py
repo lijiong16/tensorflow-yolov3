@@ -49,7 +49,7 @@ class YOLOV3(object):
     def __build_nework(self, input_data):
 
         route_1, route_2, input_data = backbone.darknet53(input_data, self.trainable)
-
+        #route_1, route_2, input_data = backbone.effB4(input_data, self.trainable)
         input_data = common.convolutional(input_data, (1, 1, 1024,  512), self.trainable, 'conv52')
         input_data = common.convolutional(input_data, (3, 3,  512, 1024), self.trainable, 'conv53')
         input_data = common.convolutional(input_data, (1, 1, 1024,  512), self.trainable, 'conv54')
